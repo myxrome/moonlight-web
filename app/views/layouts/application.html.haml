@@ -1,16 +1,22 @@
 !!! 5
-%html{ :lang => "en" }
+%html{ lang: 'en' }
   %head
-    %meta{ :charset => "utf-8" }
-
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
-
-    %title= content_for?(:title) ? yield(:title) : "Untitled"
-
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+    %title= content_for?(:title) ? yield(:title) : 'showtime.sexy'
     = csrf_meta_tag
-
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-
-    = yield
+    .top-bar
+      .top-bar-left
+        %ul.menu
+          %li.menu-text
+            %i.fi-heart
+            %span showtime.sexy
+    %br
+    .grid-container
+      .grid-x.grid-padding-x
+        .small-12.large-10.large-offset-1.cell
+          = yield
