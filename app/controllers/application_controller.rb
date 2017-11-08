@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def play
+
+  end
+
 end

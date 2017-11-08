@@ -1,7 +1,7 @@
 class Scenario < ActiveModelSerializers::Model
   include Her::Model
 
-  attributes :title, :description, :order, :active
+  attributes :title, :description, :order, :active, :key
   has_many :stages
 
   parse_root_in_json true, format: :active_model_serializers
